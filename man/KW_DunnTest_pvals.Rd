@@ -7,6 +7,23 @@ dataframe (based on Rstatix)}
 \usage{
 KW_DunnTest_pvals(x, VC1_col, VC2_col, p.adj.method)
 }
+\arguments{
+\item{x}{\itemize{
+\item Your dataset
+}}
+
+\item{VC1_col}{\itemize{
+\item first grouping variable
+}}
+
+\item{VC2_col}{\itemize{
+\item second grouping variable (This is used as the factor in the test, column ~ VC2_col)
+}}
+
+\item{p.adj.method}{\itemize{
+\item method to adjust p values for multiple comparisons. Used when pairwise comparisons are performed. Allowed values include "holm", "hochberg", "hommel", "bonferroni", "BH", "BY", "fdr", "none". If you don't want to adjust the p value (not recommended), use p.adjust.method = "none".
+}}
+}
 \value{
 Data frame of p values
 }
@@ -16,7 +33,8 @@ results in a dataframe. To use the package and the associated command add the
 write the command and add the data neccessary data set.The data set should
 have two variable/grouping columns, eg: Treatment and Sampling Day. Add your
 grouping variable to VC1_col eg: VC1_col = "Day" and variable to VC2_col
-eg: VC2_col = "Treatment". The package currently only has one command but I
+eg: VC2_col = "Treatment" and what correction you want eg, holm, hummel,
+bonferr.. etc. . The package currently only has one command but I
 will update soon (If you need something urgent please write to me on the
 provided email)
 }

@@ -28,7 +28,7 @@ KW_DunnTest_pvals<- function(x, VC1_col, VC2_col, p.adj.method) {
   n1<-paste(c("value"),as.character(VC1_col), sep = "~")
   n2<-paste(c("value"),as.character(VC2_col), sep = "~")
   y <- data.frame(cbind(c2, c3, c1))
-  ym <- data.frame(reshape2::melt(y, na.rm = TRUE))
+  ym <- data.frame(reshape2::melt(y, id.vars = c("c2","c3"), na.rm = TRUE))
 
   Kruskal_result <- ym %>% group_by(c2, variable) %>% rstatix::kruskal_test(value ~
                                                                               c3)

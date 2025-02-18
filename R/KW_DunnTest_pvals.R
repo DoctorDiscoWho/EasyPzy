@@ -1,10 +1,19 @@
 #' StatTest and Posthoc P values of multiple interdependent variables in a
 #' dataframe (based on Rstatix)
-#'
 #' @param x
 #' @param VC1_col
 #' @param VC2_col
 #' @param p.adj.method
+#' @description
+#' Runs sttistical significance tests and its associated Posthoc and gives the
+#' results in a dataframe. To use the package and the associated command add the
+#'  write the command and add the data neccessary data set.The data set should
+#'  have two variable/grouping columns, eg: Treatment and Sampling Day. Add your
+#'  grouping variable to VC1_col eg: VC1_col = "Day" and variable to VC2_col
+#'  eg: VC2_col = "Treatment". The package currently only has one command but I
+#'  will update soon (If you need something urgent please write to me on the
+#'  provided email)
+#'
 #' @returns Data frame of p values
 #' @export
 KW_DunnTest_pvals<- function(x, VC1_col, VC2_col, p.adj.method) {
